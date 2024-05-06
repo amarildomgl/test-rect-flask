@@ -1,0 +1,19 @@
+# Arquivos Python
+*.pyc
+__pycache__/
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de log
+*.log
+
+# Arquivos de saída
+*.csv
+*.xlsx
+
+# Diretório de instalação do ambiente virtual
+venv/
+
+# Arquivos de configuração local
+instance/
