@@ -4,12 +4,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { PrimeReactProvider } from "primereact/api";
+
+import { PrimeReactProvider } from 'primereact/api';
 
 import ErrorPage from "./error-page";
 import LandingPage from './pages/public/LandingPage';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
+
+
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
 
 const router = createBrowserRouter([
   {

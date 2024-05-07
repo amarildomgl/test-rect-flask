@@ -1,7 +1,5 @@
 import {
-    Outlet,
-    Link,
-    useLoaderData,
+    Link
 } from "react-router-dom";
 
 export default function LandingPage() {
@@ -9,12 +7,12 @@ export default function LandingPage() {
         <>
             <div className="landing-page">
 
-                <Link to={`register`}>
+                <Link to={`login`}>
                     <p>Login</p>
                 </Link>
 
                 <Link to={`register`}>
-                    <p>Login</p>
+                    <p>Criar conta</p>
                 </Link>
 
                 <h1>Bem-vindo ao Meu Aplicativo!</h1>

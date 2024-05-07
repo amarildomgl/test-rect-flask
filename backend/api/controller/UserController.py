@@ -38,7 +38,7 @@ class CreateUser(Resource):
         db.session.add(user)
         db.session.commit()
 
-        return jsonify(data=user_schema.dump(user), status=201)
+        return jsonify(data=user_schema.dump(user), status=200)
 
     def get(self):
         users = User.query.all()
