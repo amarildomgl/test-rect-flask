@@ -1,44 +1,48 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { PrimeReactProvider } from "primereact/api";
+import App from "./pages/App";
+
+
+// tailwind css
+import "./assets/css/index.css";
+// primreact css
+import "primeicons/primeicons.css";
+
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
-import { PrimeReactProvider } from 'primereact/api';
-
-import ErrorPage from "./error-page";
-import LandingPage from './pages/public/LandingPage';
-import Register from './pages/auth/Register';
-import Login from './pages/auth/Login';
-
-
-import "primereact/resources/themes/lara-light-cyan/theme.css";
-
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login";
+import Home from "./pages/Perfil/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
-    errorElement: <ErrorPage />,
+    element: <App />,
   },
   {
-    path: "/register",
+    path: "/entrar",
+    element: <Login />,
+  },
+  {
+    path: "/registrar",
     element: <Register />,
-    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
 
-  {
-    path: "/login",
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <PrimeReactProvider>
+    <PrimeReactProvider value={{ unstyled: false }}>
       <RouterProvider router={router} />
     </PrimeReactProvider>
   </React.StrictMode>
-)
+);

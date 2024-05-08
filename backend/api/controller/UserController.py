@@ -18,7 +18,7 @@ class Login(Resource):
         if user is None or not user.check_password(password):
             return jsonify(data=None, message="Credenciais inválidas", status=404)
 
-        return jsonify(data=user_schema.dump(user), status=200)
+        return jsonify(data=user_schema.dump(user), status=200, message='Success')
 
 
 class CreateUser(Resource):
@@ -38,7 +38,7 @@ class CreateUser(Resource):
         db.session.add(user)
         db.session.commit()
 
-        return jsonify(data=user_schema.dump(user), status=200)
+        return jsonify(data=user_schema.dump(user), status=200, message='Success')
 
     def get(self):
         users = User.query.all()

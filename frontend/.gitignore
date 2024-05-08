@@ -6,7 +6,6 @@ out/
 node_modules/
 
 
-
 *.log
 logs/
 npm-debug.log*
